@@ -1,5 +1,5 @@
 <!doctype html>
-<html lang="en">
+<html xmlns:th="http://www.thymeleaf.org">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport"
@@ -8,6 +8,28 @@
     <title>Home Page</title>
 </head>
 <body>
+<div align="center">
+    <a th:href="@{/showNewStudentForm}">Add new Student</a>
+    <h2>List of the Student</h2>
+    <table>
+        <thead>
+        <tr>
+            <th>userName</th>
+            <th>fullName</th>
+            <th>password</th>
+            <th>role</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr th:each="students : ${listStudent}">
+            <td th:text="${students.userName}"></td>
+            <td th:text="${students.fullName}"></td>
+            <td th:text="${students.password}"></td>
+            <td th:text="${students.role}"></td>
+        </tr>
+        </tbody>
+    </table>
+</div>
 
 </body>
 </html>
