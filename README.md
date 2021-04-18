@@ -9,10 +9,12 @@ Keep record of Student
 Student Record
 
 This is CRUD Application that is made in SPRING-BOOT  :smile:
-  ![](screenshots/landingPage.PNG)
-  This is the landing page
+This is the landing page
+ ![](screenshots/landingPage.PNG)
+  
+    This is the page to add new Student
   ![](screenshots/addForm.PNG)
-  This is the page to add new Student
+
 
 
 ### Built With
