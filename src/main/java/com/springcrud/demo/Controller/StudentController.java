@@ -2,7 +2,9 @@ package com.springcrud.demo.Controller;
 
 import com.springcrud.demo.Entity.Student;
 import com.springcrud.demo.Service.StudnetServiceImpl;
+import com.springcrud.demo.config.SecurityConfig;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
@@ -15,6 +17,12 @@ public class StudentController {
 
     @Autowired
     private StudnetServiceImpl studnetService;
+
+    @Autowired
+    private SecurityConfig securityConfig;
+
+    @Autowired
+    private BCryptPasswordEncoder bCryptPasswordEncoder;
 
     @GetMapping("/")
     public String homePage(Model model) {
@@ -35,6 +43,9 @@ public class StudentController {
 
     @RequestMapping(value = "/save", method = RequestMethod.POST)
     public String saveStudent(@ModelAttribute("student") Student student) {
+        String password = student.getPassword();
+        String encrptPassword = bCryptPasswordEncoder.encode(password);
+        student.setPassword(encrptPassword);
         studnetService.saveStudent(student);
         return "redirect:/";
     }
