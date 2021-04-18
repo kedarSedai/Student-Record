@@ -2,7 +2,6 @@ package com.springcrud.demo.Controller;
 
 import com.springcrud.demo.Entity.Student;
 import com.springcrud.demo.Service.StudnetServiceImpl;
-import com.sun.org.apache.xpath.internal.operations.Mod;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -31,7 +30,7 @@ public class StudentController {
         Student student = new Student();
 //        model.addAttribute("student", new Student());
         model.addAttribute("student", student);
-        return "newStudnet";
+        return "new";
     }
 
     @RequestMapping(value = "/save", method = RequestMethod.POST)

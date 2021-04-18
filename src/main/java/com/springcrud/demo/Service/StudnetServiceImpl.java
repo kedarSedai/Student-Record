@@ -18,7 +18,7 @@ public class StudnetServiceImpl {
     }
 
     public void saveStudent(Student student) {
-        this.studentRepository.save(student);
+        studentRepository.save(student);
     }
 
     public Student getStudentById(int id) {
@@ -28,5 +28,4 @@ public class StudnetServiceImpl {
     public void deleteById(int id) {
         studentRepository.deleteById(id);
     }
-
 }

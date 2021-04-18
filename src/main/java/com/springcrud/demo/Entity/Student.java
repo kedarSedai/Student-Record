@@ -3,24 +3,25 @@ package com.springcrud.demo.Entity;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.Id;
-import javax.persistence.Table;
+
+import javax.persistence.*;
 
 
 @Data
 @AllArgsConstructor
 @NoArgsConstructor
 @Entity
-@Table(name = "users")
 
 public class Student {
     @Id
     @GeneratedValue
     private int id;
+    @Column(name="userName")
     private String userName;
+    @Column(name = "fullName")
     private String fullName;
+    @Column(name = "password")
     private String password;
+    @Column(name = "role")
     private String role;
 }

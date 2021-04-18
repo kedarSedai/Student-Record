@@ -9,7 +9,7 @@
 </head>
 <body>
 <div align="center">
-    <a th:href="@{/showNewStudentForm}">Add new Student</a>
+    <a th:href="@{/new}">Add new Student</a>
     <h2>List of the Student</h2>
     <table>
         <thead>
@@ -22,10 +22,17 @@
         </thead>
         <tbody>
         <tr th:each="students : ${listStudent}">
-            <td th:text="${students.userName}"></td>
-            <td th:text="${students.fullName}"></td>
-            <td th:text="${students.password}"></td>
-            <td th:text="${students.role}"></td>
+            <td th:text="${students.id}">Student UserName</td>
+            <td th:text="${students.userName}">Student UserName</td>
+            <td th:text="${students.fullName}">Student FullName</td>
+            <td th:text="${students.password}">Student Password</td>
+            <td th:text="${students.role}">Student Role</td>
+            <td>
+                <a th:href="@{'/edit/' + ${students.id}}">Edit</a>
+            </td>
+            <td>
+                <a th:href="@{'/delete/' + ${students.id}}">Delete</a>
+            </td>
         </tr>
         </tbody>
     </table>
