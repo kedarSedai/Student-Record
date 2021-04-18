@@ -8,12 +8,13 @@ Keep record of Student
 
 Student Record
 
-This is CRUD Application that is made in SPRING-BOOT  :smile:
-This is the landing page
- ![](screenshots/landingPage.PNG)
+ This is CRUD Application that is made in SPRING-BOOT  :smile:
+ 
+  This is the landing page
+  ![](screenshots/landingPage.PNG)
   
-    This is the page to add new Student
-  ![](screenshots/addForm.PNG)
+   This is the page to add new Student
+   ![](screenshots/addForm.PNG)
 
 
 
